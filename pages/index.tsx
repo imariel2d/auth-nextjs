@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import Head from 'next/head';
-import Image from 'next/image';
 import { Inter } from 'next/font/google';
+import { Col, Row } from 'antd';
 
 import { LoginForm } from '@/components/login-form';
 
@@ -17,8 +17,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico"/>
       </Head>
       <main>
-        <h1>Auth with Next.js</h1>
-        <LoginForm/>
+        <Row style={{ maxWidth: 600 }} justify="end" align="bottom">
+          <Col span={24}>
+            <h1>Auth with Next.js</h1>
+            <LoginForm/>
+          </Col>
+        </Row>
       </main>
     </Fragment>
   )
