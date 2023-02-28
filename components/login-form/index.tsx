@@ -1,9 +1,23 @@
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { useState, ChangeEvent } from 'react';
 import { Button, Col, Input, Form, Row } from 'antd';
 
 export const LoginForm = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const onPasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
+  };
+
   const onFinish = () => {
-    console.log('whomp');
+    console.log({
+      email,
+      password
+    });
   };
 
 
@@ -17,14 +31,21 @@ export const LoginForm = () => {
         name="email"
         rules={[{ required: true, message: 'Please input your email!' }]}
       >
-        <Input size="large" />
+        <Input
+          size="large"
+          onChange={onEmailChange}
+        />
       </Form.Item>
       <Form.Item
         label="Password"
         name="password"
         rules={[{ required: true, message: 'Please input your password!' }]}
       >
-        <Input size="large" />
+        <Input
+          size="large"
+          type="password"
+          onChange={onPasswordChange}
+        />
       </Form.Item>
       <Form.Item>
         <Row justify="end">

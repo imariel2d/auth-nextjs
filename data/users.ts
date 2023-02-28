@@ -1,0 +1,1 @@
+export type User = {  email: string;  password: string;}export const users: User[] = [  {    email: 'imariel2d@gmail.com',    password: 'dummypassword',  }];
