@@ -1,5 +1,5 @@
-import { Fragment } from 'react'
 import Head from 'next/head';
+import { Fragment } from 'react'
 import { Inter } from 'next/font/google';
 import { Col, Row } from 'antd';
 
@@ -7,7 +7,8 @@ import { LoginForm } from '@/components/login-form';
 
 const inter = Inter({subsets: ['latin']});
 
-export default function Home() {
+export default function Login() {
+
   return (
     <Fragment>
       <Head>
